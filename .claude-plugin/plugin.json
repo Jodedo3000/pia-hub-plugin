@@ -1,0 +1,9 @@
+{
+  "name": "pia-hub",
+  "version": "0.1.0",
+  "description": "Psychotherapie-Ausbildungskompetenz (PiA, altes Recht) als Agent Skills: Fallkonzeption, Patientensimulation, Pruefungstraining und Ausbildungsnavigation, aus der Methodik des PiA Hub.",
+  "author": {
+    "name": "PiA Hub (Johannes Dommnich)",
+    "url": "https://piahub.netlify.app"
+  }
+}
