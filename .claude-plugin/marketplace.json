@@ -1,0 +1,22 @@
+{
+  "name": "pia-hub-marketplace",
+  "owner": {
+    "name": "Johannes Dommnich",
+    "url": "https://github.com/Jodedo3000"
+  },
+  "description": "Plugins rund um die Psychotherapie-Ausbildung (PiA, altes Recht).",
+  "plugins": [
+    {
+      "name": "pia-hub",
+      "source": "./",
+      "description": "Fallkonzeption, Patientensimulation, Pruefungstraining und Ausbildungsnavigation als Agent Skills.",
+      "version": "0.1.0",
+      "author": { "name": "Johannes Dommnich" },
+      "homepage": "https://piahub.netlify.app",
+      "repository": "https://github.com/Jodedo3000/pia-hub-plugin",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": ["psychotherapie", "pia", "ausbildung", "deutsch"]
+    }
+  ]
+}

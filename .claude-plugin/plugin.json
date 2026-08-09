@@ -5,5 +5,9 @@
   "author": {
     "name": "PiA Hub (Johannes Dommnich)",
     "url": "https://piahub.netlify.app"
-  }
+  },
+  "homepage": "https://piahub.netlify.app",
+  "repository": "https://github.com/Jodedo3000/pia-hub-plugin",
+  "license": "MIT",
+  "keywords": ["psychotherapie", "pia", "ausbildung", "approbationspruefung", "fallkonzeption", "erstgespraech", "deutsch"]
 }

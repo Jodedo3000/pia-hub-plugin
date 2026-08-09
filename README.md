@@ -17,10 +17,53 @@ Psychotherapie-Ausbildungskompetenz als installierbare Agent Skills, nach dem of
 
 Das Paket folgt dem Agent-Plugins-Standard (Root-`plugin.json`) und trägt zusätzlich ein Claude-Code-Manifest (`.claude-plugin/plugin.json`), dasselbe Repo läuft also in beiden Welten.
 
+### Claude Code
+
+Zwei Befehle in einer laufenden Sitzung:
+
+```
+/plugin marketplace add Jodedo3000/pia-hub-plugin
+/plugin install pia-hub@pia-hub-marketplace
+```
+
+Der erste Befehl meldet dieses Repository als Bezugsquelle an, der zweite installiert das Plugin daraus. Beim Installieren fragt Claude Code nach dem Geltungsbereich, „user" heißt in allen Projekten verfügbar. Falls die Zusammenfassung dazu auffordert, danach `/reload-plugins` ausführen.
+
+Anschließend stehen die vier Skills bereit, mit dem Plugin-Namen als Präfix:
+
+```
+/pia-hub:fallkonzeption
+/pia-hub:patienten-simulation
+/pia-hub:pruefungs-coach
+/pia-hub:ausbildungs-navigator
+```
+
+Du kannst sie auch einfach beschreiben statt aufrufen. Wer nach einer SORKC-Analyse fragt, bekommt den passenden Skill automatisch.
+
+**Nur einen einzelnen Skill, ohne Plugin-Installation:**
+
+```
+git clone https://github.com/Jodedo3000/pia-hub-plugin.git
+mkdir -p ~/.claude/skills
+cp -r pia-hub-plugin/skills/fallkonzeption ~/.claude/skills/
+```
+
+Der Skill heißt dann `/fallkonzeption`, ohne Präfix, und gilt in allen Projekten. Für ein einzelnes Projekt nimmst du `.claude/skills/` im Projektverzeichnis. Zum reinen Ausprobieren ohne Installation genügt `claude --plugin-dir ./pia-hub-plugin`.
+
+### ChatGPT und Codex
+
+Noch nicht im OpenAI Plugins Directory gelistet, die Installation läuft deshalb lokal. Praktischerweise liest die ChatGPT-Desktop-App dieselbe `.claude-plugin/marketplace.json` mit, die auch Claude Code nutzt.
+
+1. Repository klonen: `git clone https://github.com/Jodedo3000/pia-hub-plugin.git`
+2. ChatGPT-Desktop-App öffnen, in den Work-Mode wechseln oder Codex wählen.
+3. Den geklonten Ordner als Arbeitsverzeichnis öffnen und **Plugins** aufrufen. Im Codex CLI öffnet `/plugins` denselben Browser.
+4. Installieren, dann eine neue Unterhaltung starten. Die Skills laden erst in einer frischen Sitzung.
+
+Nach einem `git pull` die Desktop-App neu starten, damit die aktualisierten Dateien greifen.
+
+### VS Code, GitHub Copilot und Cursor
+
 - **VS Code / GitHub Copilot:** Befehl „Agent Plugins: Install Plugin From Source" und die URL dieses Repos angeben.
 - **Cursor:** unterstützt den offenen Standard, Repo über die Plugin-Einstellungen einbinden.
-- **ChatGPT / Codex:** sobald das Plugin im OpenAI Plugin Directory gelistet ist, über die Plugin-Suche. Bis dahin je nach Client über lokale Marketplace-Konfiguration.
-- **Claude Code:** Repo als Marketplace hinzufügen und das Plugin installieren, oder einzelne `skills/*/SKILL.md` in das eigene Skill-Verzeichnis übernehmen.
 
 ## Wichtige Grenzen
 
